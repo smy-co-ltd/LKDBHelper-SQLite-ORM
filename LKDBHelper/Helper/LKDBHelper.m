@@ -225,7 +225,7 @@ static BOOL LKDBNullIsEmptyString = NO;
 #ifdef __IPHONE_OS_VERSION_MIN_REQUIRED
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if ([fileManager fileExistsAtPath:filePath]) {
-        [fileManager setAttributes:@{NSFileProtectionKey: NSFileProtectionNone} ofItemAtPath:filePath error:nil];
+        [fileManager setAttributes:@{NSFileProtectionKey: NSFileProtectionNone,NSFilePosixPermissions:[NSNumber numberWithInteger:432]} ofItemAtPath:filePath error:nil];
     }
 #endif
 }
